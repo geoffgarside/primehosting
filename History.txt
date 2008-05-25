@@ -1,3 +1,8 @@
+== 0.0.2 2008-05-25
+
+* 1 major enhancement:
+  * Added database configuration tasks
+
 == 0.0.1 2008-05-24
 
 * 1 major enhancement:
