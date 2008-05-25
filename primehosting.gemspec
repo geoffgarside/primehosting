@@ -1,0 +1,16 @@
+Gem::Specification.new do |s|
+  s.name = "primehosting"
+  s.version = "0.0.1"
+  s.summary = "Capistrano recipes for deployment to Primehosting accounts"
+  s.homepage = "http://primehosting.co.uk/"
+  s.rubyforge_project = "primehosting"
+  
+  s.authors = ["Geoff Garside"]
+  s.email = "primehosting@geoffgarside.co.uk"
+  
+  s.files = ["lib/primehosting/app.rb", "lib/primehosting/mongrel.rb", "lib/primehosting/version.rb", "lib/primehosting.rb", "script/destroy", "script/generate", "spec/primehosting_spec.rb", "spec/spec_helper.rb", "README", "LICENCE", "History.txt"]
+  
+  s.has_rdoc = true
+  s.add_dependency "capistrano", ">= 2.0.0"
+  s.extra_rdoc_files = ["README", "History.txt", "LICENCE"]
+end

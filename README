@@ -1,0 +1,6 @@
+PrimeHosting Capistrano Recipes
+===============================
+A gem of recipes to facilitate easy deployment of Rails applications to  [PrimeHosting][primehosting] using [Capistrano][cap].
+
+[primehosting]: http://www.primehosting.co.uk/ "Prime Hosting"
+[cap]: http://www.capify.org/ "Capistrano"
