@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
   
   s.has_rdoc = true
   s.add_dependency "capistrano", ">= 2.0.0"
+  s.add_dependency "highline", ">= 1.4.0"
   s.extra_rdoc_files = ["README", "History.txt", "LICENCE"]
 end
 EOF
