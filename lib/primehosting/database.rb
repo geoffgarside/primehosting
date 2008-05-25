@@ -17,6 +17,9 @@ production:
 EOF
       run "if test ! -d #{shared_path}/config/; then mkdir -p #{shared_path}/config/; fi"
       put db_config, "#{shared_path}/config/database.yml"
+      
+      puts "You should now add the following to your deploy.rb file"
+      puts "after 'deploy:update_code', 'database:copy_config'"
     end
     
     task :copy_config do
