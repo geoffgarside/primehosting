@@ -5,7 +5,7 @@ require 'rake'
 GEM_NAME = "primehosting"
 SUMMARY  = "Capistrano recipes for deployment to Primehosting accounts"
 HOMEPAGE = "http://primehosting.co.uk/"
-AUTHORS = ["Geoff Garside"]
+AUTHORS = ["Geoff Garside", "Anthony Underwood"]
 EMAIL = "primehosting@geoffgarside.co.uk"
 
 ## Obtained settings

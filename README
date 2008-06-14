@@ -1,6 +1,49 @@
 PrimeHosting Capistrano Recipes
 ===============================
-A gem of recipes to facilitate easy deployment of Rails applications to  [PrimeHosting][primehosting] using [Capistrano][cap].
+A gem of recipes to facilitate easy deployment of Rails applications to [PrimeHosting][primehosting] using [Capistrano][cap].
+
+Usage
+-----
+Here is an example capistrano deploy.rb file which will deploy the application `cheese` for the user `prime`. The application will be using port `11000`
+
+    require 'primehosting'
+    
+    set :user, "prime"
+    set :application, "cheese"
+    set :repository, "git://github.com/geoffgarside/ph-cheese.git"
+    
+    set :deploy_via, :remote_cache
+    
+    set :scm, :git
+    set :ssh_options, { :forward_agent => true }
+    
+    set :app_port, "11000"
+    
+    after "deploy:update_code", "database:copy_config"
+
+once you've setup your config/deploy.rb file run `cap deploy:setup` and your deployment directories will be setup for you.
+
+Note that by default it will deploy to
+
+    /usr/home/:user/apps/:application
+
+so in the above example it would be
+
+    /usr/home/prime/apps/cheese
+
+that the application would be deployed to. If you've setup your rails application to run from a different directory then you will need to set it by adding something like
+
+    set :deploy_to, "/usr/home/#{user}/rails_apps/#{application}"
+
+if you've put your applications in `rails_apps` instead of apps.
+
+Acknowledgements
+----------------
+The primehosting capistrano recipe gem has been developed by 
+
+  * Geoff Garside <geoff.garside@openhosting.co.uk>
+  * Anthony Underwood <add email here>
+
 
 [primehosting]: http://www.primehosting.co.uk/ "Prime Hosting"
 [cap]: http://www.capify.org/ "Capistrano"
