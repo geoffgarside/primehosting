@@ -1,9 +1,7 @@
-require 'highline/import'
-
 Capistrano::Configuration.instance(true).load do
   set :database_name, nil
-  set :database_user, Proc.new { ask("What is your database username?  ") { |q| q.default = "dbuser" } }
-  set :database_pass, Proc.new { ask("What is your database password?  ") { |q| q.echo = "*" } }
+  set :database_user, proc { ask("What is your database username?  ") { |q| q.default = user } }
+  set :database_pass, proc { ask("What is your database password?  ") { |q| q.echo = "*" } }
   
   namespace :database do
     task :configure do
@@ -31,4 +29,6 @@ EOF
       run "cp #{shared_path}/config/database.yml #{release_path}/config/"
     end
   end
+  
+  after "deploy:setup", "database:configure"
 end
