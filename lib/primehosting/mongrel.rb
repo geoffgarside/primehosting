@@ -25,4 +25,18 @@ Capistrano::Configuration.instance(true).load do
      ["-a", "127.0.0.1"],
      ["-l", release_path + "log/mongrel.log"]] + default_mongrel_args
   end
+  
+  namespace :deploy do
+    task :start do
+      mongrel.start
+    end
+    
+    task :stop do
+      mongrel.stop
+    end
+    
+    task :restart do
+      mongrel.restart
+    end
+  end
 end
