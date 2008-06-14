@@ -5,10 +5,10 @@ Gem::Specification.new do |s|
   s.homepage = "http://primehosting.co.uk/"
   s.rubyforge_project = "primehosting"
   
-  s.authors = ["Geoff Garside"]
+  s.authors = ["Geoff Garside", "Anthony Underwood"]
   s.email = "primehosting@geoffgarside.co.uk"
   
-  s.files = ["lib/primehosting/app.rb", "lib/primehosting/database.rb", "lib/primehosting/mongrel.rb", "lib/primehosting/version.rb", "lib/primehosting.rb", "script/destroy", "script/generate", "spec/primehosting_spec.rb", "spec/spec_helper.rb", "README", "LICENCE", "History.txt"]
+  s.files = ["lib/primehosting/database.rb", "lib/primehosting/mongrel.rb", "lib/primehosting/version.rb", "lib/primehosting.rb", "script/destroy", "script/generate", "spec/primehosting_spec.rb", "spec/spec_helper.rb", "README", "LICENCE", "History.txt"]
   
   s.has_rdoc = true
   s.add_dependency "capistrano", ">= 2.0.0"
